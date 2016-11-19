@@ -1,55 +1,68 @@
-var words = ["fight", "jaws", "jurassic"];
+var words = ["fight"];
 var computerChoice = words[Math.floor(Math.random()*words.length)];
 var numberOfGuesses = 10;
 var lettersGuessed = [];
-var count = 0;
-var lineArr = []; //making the lines on screen
-var lineCount = computerChoice.length;
-var correctLetter = "";
-var drawnWord = "";
-
-//not sure what the difference between guess and key is
-var guess = "";
-var key = "";
-
+var drawnWord = [];
+var lettersGuessed = [];
+var movieSplit = [];
+var a;
 //letters of the movie in an array
-var movieSplit = computerChoice.split("");
+//var movieSplit = computerChoice.split("");
+//console.log(movieSplit);
+
 
 var display = [];
 
 document.querySelector("#score").innerHTML = numberOfGuesses;
 
 
-for(var i = 0; i < lineCount; i++){
-	lineArr.push("_ ");
-	movieLetters.innerHTML = lineArr;
-	lineArr.join(" ");
+//draw initial lines on screen
+function initialDraw(){
+    for(var i = 0; i < computerChoice.length; i++){
+        //movieLetters.innerHTML += " _ ";
+        display[i] += " _ ";
+    }
+    a = display.join(" ");
+    document.querySelector("#display").innerHTML = a;
 }
 
 
-function draw(){
-	var drawnWord = "";
-	for(var i = 0; i < lineCount; i++){
-		if (lettersGuessed.indexOf(computerChoice[i]) == i){
-                drawnWord += guess[i];
-            }else{
-                drawnWord += " _ ";
-		}
-	}
+initialDraw();
+
+
+function draw(key){
+    drawnWord = ""; //reset each time
+    for(var i = 0; i < computerChoice.length; i++){
+
+     /*   if (lettersGuessed.indexOf(computerChoice[i]) == i){
+        drawnWord += computerChoice[i];
+    }else{
+        drawnWord += " _ ";
+        }*/
+	    if(computerChoice[i] == key){
+
+	    }
+    }
+    console.log(drawnWord);
 }
 
-
+/*
 document.onkeyup = function(event){
-	key = event.key;
-	
-	guess = guess + key;
-	
-	 if (computerChoice.indexOf(guess) >= 0) {
-            lettersGuessed.push(key);
-            draw();
-            movieLetters.innerHTML = drawnWord;
+    key = event.key;
+    --numberOfGuesses;
+    console.log(key);
+    console.log(numberOfGuesses);
+    
+     if ((computerChoice.indexOf(key) >= 0) && (lettersGuessed.indexOf(key) == -1)){
+      lettersGuessed.push(key);
+      draw();
+      movieLetters.innerHTML = drawnWord;
+  	}else{
+      console.log(key, "wrong")
+  	}
 
-        }else{
-            console.log(guess, "wrong")
-        }
+  	draw();
+  
+  document.querySelector("#score").innerHTML = numberOfGuesses;
 }
+*/

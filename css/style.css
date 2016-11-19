@@ -1,0 +1,43 @@
+body{
+	background-color: #000000;
+	text-align: center;
+	line-height: 50px;
+
+}
+
+#wrapper{
+	text-align: center;
+	width: 500px;
+	margin: 0 auto 0 auto;
+	margin-top: 50px;
+	border: 2px solid #f2ff00;
+	border-style: dashed;
+	padding: 50px;
+}
+
+#title{
+	font-size: 30px;
+	color: #ffffff;
+	font-weight: bold;
+}
+
+#movies{
+	font-size: 24px;
+	color: #ffffff;
+	font-weight: bold;
+}
+
+#display{
+	font-size: 20px;
+	color: #ffffff;
+}
+
+#score{
+	font-size: 20px;
+	color: #ffffff;
+}
+
+#letters{
+	font-size: 20px;
+	color: #ffffff;
+}
